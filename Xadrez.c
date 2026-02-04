@@ -2,26 +2,65 @@
 
 int main() {
  
-  int mRainha,
-      mBispo = 0,
-      mTorre = 0;
+  int mRainha,mBispo = 0,mTorre = 0;
+  int menu;
+
+  printf("Escolha uma peça:\n");
+  printf("1 - Rainha\n");
+  printf("2 - Bispo\n");
+  printf("3 - Torre\n");
+  scanf("%d", &menu);
+
+switch (menu)
+{
+case 1:
+     printf("Você escolheu a Rainha\n");
+     for (mRainha = 0; mRainha <= 8; mRainha++)
  
- for (mRainha = 0; mRainha <= 5; mRainha++)
  {
-      printf("Rainha moveu %d casa(s)\n", mRainha);
+      printf("Rainha moveu uma casa a esquerda\n");
  }
+     break;
 
- while (mBispo <= 5)
+case 2:
+     printf("Você escolheu o Bispo\n");
+     if (mBispo % 2 == 0)
+     {
+      printf("Bispo moveu uma casa a esquerda\n");
+      mBispo++;     }
+      else if (mBispo % 2 != 0)
+      {
+         printf("Bispo moveu uma casa para cima\n");
+          mBispo++;
+      }     
+     while (mBispo <= 4)
  {
-      printf("Bispo moveu %d casa(s)\n", mBispo);
-      mBispo++;
- }
+     if (mBispo % 2 == 0)
+     {
+      printf("Bispo moveu uma casa a esquerda\n");
+      mBispo++;     }
+      else if (mBispo % 2 != 0)
+      {
+         printf("Bispo moveu uma casa para cima\n");
+          mBispo++;
+      }     
+      
+}
+     break;
 
- do
+case 3:
+     printf("Você escolheu a Torre\n");
+     do
  {
-      printf("Torre moveu %d casa(s)\n", mTorre);
+      printf("Torre moveu %d casa(s) para direita\n", mTorre);
       mTorre++;
  } while (mTorre <= 5);
- 
-      return 0;
+
+     break;
+
+default:
+     break;
+}
+
+return 0;
 }
