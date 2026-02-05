@@ -2,13 +2,14 @@
 
 int main() {
  
-  int mRainha,mBispo = 0,mTorre = 0;
+  int mRainha,mBispo = 0,mTorre = 0, mCavalo;
   int menu;
 
   printf("Escolha uma peça:\n");
   printf("1 - Rainha\n");
   printf("2 - Bispo\n");
   printf("3 - Torre\n");
+  printf("4 - Cavalo\n");
   scanf("%d", &menu);
 
 switch (menu)
@@ -56,6 +57,22 @@ case 3:
       mTorre++;
  } while (mTorre <= 5);
 
+     break;
+
+case 4:
+     printf("Você escolheu o Cavalo\n");
+     for (mCavalo = 1; mCavalo <= 2; mCavalo++)
+     {
+          printf("Baixo\n");
+
+          while (mCavalo == 2)
+          {
+               printf("Direita\n");
+               mCavalo++;
+          }
+          
+     }
+     
      break;
 
 default:
