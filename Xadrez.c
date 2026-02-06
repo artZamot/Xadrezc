@@ -1,10 +1,43 @@
 #include <stdio.h>
 
-int main() {
- 
-  int mRainha,mBispo = 0,mTorre = 0, mCavalo;
-  int menu;
+void mRainha(){
+  printf("Você escolheu a Rainha\n");
+   for (int i = 0; i <= 8; i++)
+   {
+    printf("Esquerda\n");
+   }
+}
 
+void mTorre(){
+  printf("Você escolheu a Torre\n");
+     for (int i = 0; i <= 5; i++)
+     {
+      printf("Direita\n");
+     }
+}
+
+void mBispo(){
+  for ( int j = 0; j < 3; j++){
+            printf("Cima\n");
+            for (int i = 0; i < 1; i++)
+                if(j < 2)
+            {
+                printf("Esquerda\n");
+            }
+            
+        }
+}
+
+void mCavalo(){
+     for (int i = 0; i < 3; i++)
+{
+    printf("%s\n", i < 2 ? "Cima" : "direita");
+}
+}
+
+int main() {
+
+  int menu;
   printf("Escolha uma peça:\n");
   printf("1 - Rainha\n");
   printf("2 - Bispo\n");
@@ -16,68 +49,28 @@ switch (menu)
 {
 case 1:
      printf("Você escolheu a Rainha\n");
-     for (mRainha = 0; mRainha <= 8; mRainha++)
- 
- {
-      printf("Rainha moveu uma casa a esquerda\n");
- }
+     mRainha();
      break;
 
 case 2:
      printf("Você escolheu o Bispo\n");
-     if (mBispo % 2 == 0)
-     {
-      printf("Bispo moveu uma casa a esquerda\n");
-      mBispo++;     }
-      else if (mBispo % 2 != 0)
-      {
-         printf("Bispo moveu uma casa para cima\n");
-          mBispo++;
-      }     
-     while (mBispo <= 4)
- {
-     if (mBispo % 2 == 0)
-     {
-      printf("Bispo moveu uma casa a esquerda\n");
-      mBispo++;     }
-      else if (mBispo % 2 != 0)
-      {
-         printf("Bispo moveu uma casa para cima\n");
-          mBispo++;
-      }     
-      
-}
-     break;
+        mBispo();
+        
+        break;
 
 case 3:
      printf("Você escolheu a Torre\n");
-     do
- {
-      printf("Torre moveu %d casa(s) para direita\n", mTorre);
-      mTorre++;
- } while (mTorre <= 5);
-
+        mTorre();
      break;
 
 case 4:
-     printf("Você escolheu o Cavalo\n");
-     for (mCavalo = 1; mCavalo <= 2; mCavalo++)
-     {
-          printf("Baixo\n");
+    mCavalo();
 
-          while (mCavalo == 2)
-          {
-               printf("Direita\n");
-               mCavalo++;
-          }
-          
-     }
-     
      break;
 
 default:
      break;
+}return 0;
+
 }
 
-return 0;
-}
